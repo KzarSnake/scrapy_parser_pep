@@ -6,7 +6,7 @@
 ### Подготовка к запуску:
 **Клонируйте репозиторий:**
 ```
-git clone git@github.com:https://github.com/KzarSnake/scrapy_parser_pep.git
+git clone https://github.com/KzarSnake/scrapy_parser_pep.git
 ```
 **Установите и активируйте виртуальное окружение:**
 ```
