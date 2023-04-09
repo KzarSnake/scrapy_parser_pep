@@ -1,3 +1,5 @@
+import re
+
 import scrapy
 
 from pep_parse.items import PepParseItem
@@ -20,8 +22,8 @@ class PepSpider(scrapy.Spider):
     def parse_pep(self, response):
         pep_detail = response.css('h1.page-title::text').get()
         data = {
-            'number': int(pep_detail.split()[1].strip()),
-            'name': pep_detail.strip(),
+            'number': re.search(r'PEP (\d+)...(\w+.+)', pep_detail).group(1),
+            'name': re.search(r'PEP (\d+)...(\w+.+)', pep_detail).group(2),
             'status': response.css('abbr::text').get(),
         }
         yield PepParseItem(data)

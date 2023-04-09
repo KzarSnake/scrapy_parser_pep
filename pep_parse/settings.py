@@ -5,6 +5,11 @@ NEWSPIDER_MODULE = 'pep_parse.spiders'
 
 ROBOTSTXT_OBEY = True
 
+DATE_FORMAT = '%Y-%m-%dT%H-%M-%S'
+RESULTS = 'results'
+STATUS = 'Status'
+AMOUNT = 'Amount'
+
 FEEDS = {
     'results/pep_%(time)s.csv': {
         'format': 'csv',
